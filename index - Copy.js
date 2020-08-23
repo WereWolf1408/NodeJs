@@ -8,7 +8,7 @@ let counter = 1;
 
 fs.readdir(originPath, function (err, files) {
 	if (err) {
-		return console.log('Unable to scan directory: ' + err);
+		return console.log("Unable to scan directory" + err);
 	}
 	handleSubDirectoryFolders(files);
 });
