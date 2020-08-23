@@ -3,6 +3,7 @@ const fs = require('fs');
 // const originPath = path.join(__dirname, 'origin');
 const originPath = 'F:/manga/Hajimete no Gal';
 const fileExtentionPattern = /^[0-9]+\.+(doc|jpg|png)$/i;
+//const numberInString = /([cC]hapter (\d+(?:\.\d+)*).*) -/;
 const numberInString = /(\d+(?:\.\d+)*)/;
 
 fs.readdir(originPath, function (err, files) {
@@ -22,7 +23,7 @@ function handleSubDirectoryFolders(files) {
 
 		fs.readdir(subPath, function (err, files) {
 			if (err) {
-				console.log(`Error during scan subdirectory`);
+				console.log(`Error during scan subdirectory ${subPath}; ERROR = ${err}`);
 				return;
 			}
 
