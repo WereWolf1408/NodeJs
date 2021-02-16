@@ -29,13 +29,9 @@ function diskInforamtion (disks) {
 }
 
 function getDiskInfo() {
-  try {
     const disks = nodeDiskInfo.getDiskInfoSync();
     printResults("SYNC WAY", disks);
     return diskInforamtion(disks);
-  } catch (e) {
-    console.error(e);
-  }
 }
 
 module.exports = getDiskInfo;
