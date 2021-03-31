@@ -9,7 +9,7 @@ function sendJsonData (res, data = {}, status = HTTP_STATUS.OK) {
 function sendJsonError (res, error, status = HTTP_STATUS.BAD_REQUEST) {
   res.status(status).json(Object.assign({
     success: false
-  }, ...error));
+  }, error));
 }
 
 module.exports = {
